@@ -254,7 +254,8 @@ def OTPValidate():
     
 @app.route('/resend')
 def Resend():
-    mobno=session['mobileno']
+    mobileno=session['mobileno']
+    mobno="+91"+mobileno
     val = Get_OTP(mobno)
     if val:
         return render_template('enterotp.html',result="OTP Sent Successful!")
