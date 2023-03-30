@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RegistrationPage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="{{url_for('static',filename='css/register.css')}}" rel="stylesheet">
+  <script src="{{url_for('static',filename='javascript/register.js')}}"></script>
+</head>
+<section class="vh-100" style="background-image: url('static/IMG/bg-01.jpg'); background-repeat: no-repeat; background-size: 100%;">
+    <div class="container py-5 h-150">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-5 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 0.8rem;">
+            <div class="card-body p-5">
+            <h3 class="mb-5 text-center">Register</h3>
+            <form class="form-horizontal" method="post" action="/register" style="padding-left:8%;">
+                <div class="form-outline mb-3">
+                    <label class="cols-sm-2 control-label">Name</label><br>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter Firstname." value="{{fname}}" required size="18"/> &nbsp;
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter Lastname." value="{{lname}}" required size="18"/> 
+                </div>
+                <div class="form-outline mb-4">
+                  <label>MobileNo</label><br>
+                  <input type="tel" id="mobileno" name="mobileno" placeholder="Enter MobileNo." value="{{mobno}}" required size="44"/> 
+                </div>
+                <div class="form-outline mb-4">
+                    <label>Password</label><br>
+                    <input type="password" id="registerpassword"  name="registerpassword" placeholder="Enter Password." value="{{regpass}}" required size="44"/> 
+                </div>
+                <div class="form-outline mb-4">
+                    <label>Confirm Password</label><br>
+                    <input type="password" id="confirmpassword"  name="confirmpassword" placeholder="ReEnter Password." value="{{confpass}}" required size="44"/> 
+                </div>               
+                <div style="padding-left: 35%;">
+                  <button class="btn btn-primary">Register<br></button>
+                </div>
+            </form>
+              <hr class="my-4">
+              <div class="text-center text-lg-start mt-2">
+                  <p class="small fw-bold mt-2  mb-0 text-center">Already Registered ? <a style="text-decoration:none;" href="/login" class="link-danger"> Login</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <center>
+          <span class="err" style="color:black;font-size: 20px;">{{abc}}</span>
+        </center>
+      </div>
+    </div>
+</section>
+</html>

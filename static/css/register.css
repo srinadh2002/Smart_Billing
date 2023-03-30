@@ -1,0 +1,7 @@
+body {
+    overflow-y: hidden;
+  }
+.err {
+    position: relative;
+    bottom: -40px;
+}

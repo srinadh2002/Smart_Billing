@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OTPValidate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="{{url_for('static',filename='css/forget.css')}}" rel="stylesheet">
+</head>
+<body align="center" style="background-image: url('static/IMG/bg-02.jpg'); background-repeat: no-repeat; background-size: 100%;">
+
+<div class="form-box">
+  <br><br>
+    <form action="/enterotp", method="POST">
+      <br><br>
+      <div class="form-outline mb-4">
+        <label class="cols-sm-2 control-label">Enter OTP</label><br>  
+        <input type="text" id="enterotp" name="enterotp" placeholder="Enter OTP." value="{{userotp}}" required size="38"/> 
+      </div>
+      <br>
+      <button type="submit" class="btn btn-info">Verify</button>
+    </form>
+    <br>
+    <div class="text-center text-lg-start mt-2">
+      <p class="small fw-bold mt-2  mb-0 text-center" style="font-size: 15px;">Didn't receive the OTP ? <a style="text-decoration:none;" href="/resend" class="link-danger">Resend OTP</a></p>
+    </div>
+</div>
+<br>
+<div class="abc" style="color:black;">{{result}}</div>
+</body>
+</html>
